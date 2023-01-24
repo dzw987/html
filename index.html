@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        img{
+            /* 高度不设置按原图片比例缩放 */
+            height: auto;
+            width: 230px;
+            /* img标签为内联元素，不然无法设置内外边距 */
+            display: block;
+            /* 使图片居中 */
+            margin:0 auto;
+            /* transition:过渡 */
+            transition: all 2s;
+        }
+        img:hover{
+            -webkit-filter: none;
+            /* 如果使用此种方法必须使用类命名使用id命名不生效,原因时id选择器优先级高于img:hover选择器
+                因此-webkit-filter:none无法替换-webkit-filter:all: 
+                选择器的优先级：通配选择器 < 标签选择器 < 类选择器=属性选择器=伪类选择器 < id选择器 < 内联样式（style） < 加了(!important)的属性
+            */
+            /* width: 330px ; */
+        }
+        .img1{
+            /* 滤镜属性 
+            灰度 grayscale 默认0，百分之0灰，1百分百灰
+            */
+            -webkit-filter: grayscale(1);
+        }
+        .img2{
+            /* 
+            滤镜属性：
+            亮度，brightness 默认1，正常亮度；0，为黑；2,曝光效果
+            */
+            -webkit-filter: brightness(0);
+        }
+        .img3{
+            /* 滤镜属性：
+            褐色属性，sepia 默认0，1百分百褐色；用于老照片处理
+            */
+            -webkit-filter: sepia(1);
+        }
+        .img4{
+            /* 滤镜属性
+            模糊度，blur,设置像素，
+            */
+            -webkit-filter: blur(2px);
+        }
+        .img5{
+            /* 对比度
+            contrast,正常对比度为1；如果调成0就没有对比度，变为灰色；
+            */
+            -webkit-filter: contrast(0.5);
+        }
+        .img6{
+            /* 饱和度
+            saturate,正常值为1，0为黑白，大于1色彩更加艳丽，增加色彩艳丽度
+            */
+            -webkit-filter: saturate(0.5);
+        }
+        .img7{
+            /* 胶片底色效果
+            invert,正常值为0，0.5全灰色，1胶片底色；
+            */
+            -webkit-filter: invert(1);
+
+        }
+        .img8{
+            /* 色相旋转
+            hue-rotate,设置角度(deg)，默认0度，最大值为360度；
+            */
+            -webkit-filter:hue-rotate(103deg);
+        }
+        .img9{
+            /* 
+            慢慢的展现照片；多种效果组合，利用曝光度，与灰度，还有模糊度
+            */
+            -webkit-filter: blur(10px) brightness(20) grayscale(1);
+            transition: all 10s;
+        }
+        .img9:hover{
+            -webkit-filter: blur(0) brightness(1) grayscale(1);
+        }
+
+    </style>
+</head>
+<body>
+    <img id="img1" class="img1" src="image/刘诗诗.jpg" alt="">
+    <img id="img2" class="img2" src="image/刘诗诗.jpg" alt=""> 
+    <img class="img3" src="image/刘诗诗.jpg" alt="" >
+    <img src="image/刘诗诗.jpg" alt="" class="img4">
+    <img src="image/刘诗诗.jpg" alt="" class="img5">
+    <img src="image/刘诗诗.jpg" alt="" class="img6">
+    <img src="image/刘诗诗.jpg" alt="" class="img7">
+    <img src="image/刘诗诗.jpg" alt="" class="img8">
+    <img src="image/刘诗诗.jpg" alt="" class="img9">
+</body>
+</html>
